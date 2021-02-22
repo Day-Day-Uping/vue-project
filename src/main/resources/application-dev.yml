@@ -1,0 +1,11 @@
+server:
+  port: 7001
+spring:
+  datasource:
+    password: root
+    username: root
+    url: jdbc:mysql://localhost:3306/vue_project
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+mybatis-plus:
+  config-location: classpath:/mapper/*.xml
