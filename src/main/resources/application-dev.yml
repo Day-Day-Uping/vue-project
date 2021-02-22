@@ -8,4 +8,23 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
 mybatis-plus:
-  config-location: classpath:/mapper/*.xml
+  # 扫描mapper.xml文件
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  # 扫描实体类
+  typeAliasesPackage: com.hyy.backstage.entity
+  # 主键类型
+  global-config:
+    #驼峰下划线转换
+    db-column-underline: true
+    #刷新mapper 调试神器
+    refresh-mapper: true
+    #数据库大写下划线转换
+    #capital-mode: true
+  #自定义SQL注入器
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+logging:
+  level:
+    root: info
+    com.hyy.backstage: debug
